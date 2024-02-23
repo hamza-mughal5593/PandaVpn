@@ -19,15 +19,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/back_ic"/>
+
         <TextView
-            android:layout_centerInParent="true"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:fontFamily="@font/font_semi"
             android:text="Server"
             android:textColor="@color/white"
-            android:textSize="@dimen/_14sdp"
-            android:fontFamily="@font/font_semi"/>
+            android:textSize="@dimen/_14sdp" />
     </RelativeLayout>
     <LinearLayout
         android:orientation="vertical"
