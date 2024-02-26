@@ -5,6 +5,7 @@
 
     <group android:checkableBehavior="none">
         <item
+            
             android:id="@+id/nav_setting"
             android:title="Settings" />
         <item

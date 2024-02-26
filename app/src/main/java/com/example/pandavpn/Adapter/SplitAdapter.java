@@ -35,7 +35,7 @@ public class SplitAdapter extends RecyclerView.Adapter<SplitAdapter.ViewHolder> 
     @Override
     public SplitAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.section_row, parent, false);
+        View view = layoutInflater.inflate(R.layout.split_row, parent, false);
         return new SplitAdapter.ViewHolder(view);
     }
 
@@ -45,7 +45,7 @@ public class SplitAdapter extends RecyclerView.Adapter<SplitAdapter.ViewHolder> 
         SplitModel section = sectionList.get(position);
         String sectionName = section.getAppName();
 
-        holder.country_name.setText(sectionName);
+        holder.app_name.setText(sectionName);
 
 
         holder.main.setOnClickListener(v -> {
@@ -55,21 +55,6 @@ public class SplitAdapter extends RecyclerView.Adapter<SplitAdapter.ViewHolder> 
 
     }
 
-    // Filter Class
-    public void filter(String charText) {
-        charText = charText.toLowerCase(Locale.getDefault());
-        sectionList.clear();
-        if (charText.length() == 0) {
-            sectionList.addAll(arraylist);
-        } else {
-            for (SplitModel wp : arraylist) {
-                if (wp.getAppName().toLowerCase(Locale.getDefault()).contains(charText)) {
-                    sectionList.add(wp);
-                }
-            }
-        }
-        notifyDataSetChanged();
-    }
 
 
     @Override
@@ -79,15 +64,13 @@ public class SplitAdapter extends RecyclerView.Adapter<SplitAdapter.ViewHolder> 
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView country_name;
-        ImageView speed;
+        TextView app_name;
         LinearLayout main;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            country_name = itemView.findViewById(R.id.country_name);
-            speed = itemView.findViewById(R.id.speed);
+            app_name = itemView.findViewById(R.id.app_name);
 //            selection = itemView.findViewById(R.id.selection);
             main = itemView.findViewById(R.id.layout);
         }

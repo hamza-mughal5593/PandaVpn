@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.pandavpn.Adapter.SplitAdapter;
 import com.example.pandavpn.Adapter.SplitAdapter;
@@ -24,22 +25,29 @@ public class SplitTunnelingActivity extends AppCompatActivity implements SplitAd
         setContentView(R.layout.activity_split_tunneling);
 
         recyclerView = findViewById(R.id.recyclr);
-        splistList.add(new SplitModel(1, "United Estates", false));
-        splistList.add(new SplitModel(2, "Canada", false));
-        splistList.add(new SplitModel(3, "Australia", false));
-        splistList.add(new SplitModel(4, "America", false));
-        splistList.add(new SplitModel(5, "Germany", false));
-        splistList.add(new SplitModel(5, "Germany", false));
-        splistList.add(new SplitModel(5, "Germany", false));
-        splistList.add(new SplitModel(5, "Germany", false));
-        splistList.add(new SplitModel(5, "Germany", false));
-        splistList.add(new SplitModel(5, "Germany", false));
-        splistList.add(new SplitModel(5, "Germany", false));
+        splistList.add(new SplitModel(1, "Facebook", false));
+        splistList.add(new SplitModel(2, "Whatsapp", false));
+        splistList.add(new SplitModel(3, "Whatsapp", false));
+        splistList.add(new SplitModel(4, "Whatsapp", false));
+        splistList.add(new SplitModel(5, "Whatsapp", false));
+        splistList.add(new SplitModel(5, "Whatsapp", false));
+        splistList.add(new SplitModel(5, "Whatsapp", false));
+        splistList.add(new SplitModel(5, "Whatsapp", false));
+        splistList.add(new SplitModel(5, "Whatsapp", false));
+        splistList.add(new SplitModel(5, "Whatsapp", false));
+        splistList.add(new SplitModel(5, "Whatsapp", false));
         countryListAdapter = new SplitAdapter(SplitTunnelingActivity.this, splistList, this);
 
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 1, RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(countryListAdapter);
+
+        findViewById(R.id.back_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
     @Override
     public void onItemClicked(SplitModel server, int postion, boolean isSelected) {
